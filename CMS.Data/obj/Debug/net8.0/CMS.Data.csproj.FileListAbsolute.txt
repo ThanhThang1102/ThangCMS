@@ -1,0 +1,14 @@
+D:\Desktop\ThangCMS_Solution\CMS.Data\bin\Debug\net8.0\CMS.Data.deps.json
+D:\Desktop\ThangCMS_Solution\CMS.Data\bin\Debug\net8.0\CMS.Data.runtimeconfig.json
+D:\Desktop\ThangCMS_Solution\CMS.Data\bin\Debug\net8.0\CMS.Data.dll
+D:\Desktop\ThangCMS_Solution\CMS.Data\bin\Debug\net8.0\CMS.Data.pdb
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.csproj.AssemblyReference.cache
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.AssemblyInfoInputs.cache
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.AssemblyInfo.cs
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.csproj.CoreCompileInputs.cache
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.dll
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\refint\CMS.Data.dll
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.pdb
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\CMS.Data.genruntimeconfig.cache
+D:\Desktop\ThangCMS_Solution\CMS.Data\obj\Debug\net8.0\ref\CMS.Data.dll
