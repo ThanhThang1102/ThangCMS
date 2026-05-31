@@ -1,0 +1,70 @@
+@model IEnumerable<CMS.Data.Entities.User>
+
+@{
+    ViewData["Title"] = "Quản lý Người dùng";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold mb-0">Quản lý Người dùng</h2>
+        <p class="text-muted mb-0">Quản lý danh sách tài khoản quản trị và biên tập viên hệ thống</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> Thêm người dùng mới
+    </a>
+</div>
+
+<div class="card border border-light shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Họ và tên</th>
+                    <th>Vai trò</th>
+                    <th class="text-end">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="text-center py-4 text-muted">Chưa có người dùng nào.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        string roleBadge = item.Role switch
+                        {
+                            "Quản trị viên" => "bg-danger bg-opacity-10 text-danger",
+                            "Biên tập viên" => "bg-success bg-opacity-10 text-success",
+                            _ => "bg-secondary bg-opacity-10 text-secondary"
+                        };
+                        <tr>
+                            <td><strong>#@item.Id</strong></td>
+                            <td>@item.Username</td>
+                            <td>@item.FullName</td>
+                            <td>
+                                <span class="badge @roleBadge p-2 rounded">@item.Role</span>
+                            </td>
+                            <td class="text-end">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-light border text-primary me-1">
+                                    <i class="bi bi-pencil"></i> Sửa
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-light border text-info me-1">
+                                    <i class="bi bi-info-circle"></i> Chi tiết
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-light border text-danger">
+                                    <i class="bi bi-trash"></i> Xóa
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

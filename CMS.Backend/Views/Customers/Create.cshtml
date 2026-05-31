@@ -1,0 +1,61 @@
+@model CMS.Data.Entities.Customer
+
+@{
+    ViewData["Title"] = "Thêm Khách hàng mới";
+}
+
+<div class="mb-4">
+    <a asp-action="Index" class="btn btn-sm btn-light border mb-2">
+        <i class="bi bi-arrow-left"></i> Quay lại danh sách
+    </a>
+    <h2 class="fw-bold mb-0">Thêm Khách hàng mới</h2>
+    <p class="text-muted">Nhập thông tin đăng ký tài khoản khách hàng</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8 col-lg-6">
+        <div class="card border border-light shadow-sm p-4 bg-white">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label fw-medium">Họ và tên khách hàng</label>
+                    <input asp-for="FullName" class="form-control" placeholder="Nhập họ và tên..." required />
+                    <span asp-validation-for="FullName" class="text-danger fs-7"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label fw-medium">Địa chỉ Email</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="example@mail.com" required />
+                    <span asp-validation-for="Email" class="text-danger fs-7"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label fw-medium">Số điện thoại</label>
+                    <input asp-for="Phone" class="form-control" placeholder="Nhập số điện thoại..." />
+                    <span asp-validation-for="Phone" class="text-danger fs-7"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label fw-medium">Mật khẩu tài khoản</label>
+                    <input asp-for="Password" type="text" class="form-control" placeholder="Nhập mật khẩu..." required />
+                    <span asp-validation-for="Password" class="text-danger fs-7"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Address" class="form-label fw-medium">Địa chỉ giao hàng</label>
+                    <textarea asp-for="Address" class="form-control" rows="2" placeholder="Nhập địa chỉ nhà, số đường, quận huyện..."></textarea>
+                    <span asp-validation-for="Address" class="text-danger fs-7"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    <i class="bi bi-check-circle me-1"></i> Tạo khách hàng
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -23,4 +23,4 @@ namespace CMS.Data.Entities
         public virtual ICollection<Product>? Products { get; set; }
     }
 }
-
+    

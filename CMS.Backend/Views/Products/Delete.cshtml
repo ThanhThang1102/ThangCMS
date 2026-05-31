@@ -1,0 +1,51 @@
+@model CMS.Data.Entities.Product
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<div class="mb-4">
+    <a asp-action="Index" class="btn btn-sm btn-light border mb-2">
+        <i class="bi bi-arrow-left"></i> Quay lại danh sách
+    </a>
+    <h2 class="fw-bold text-danger mb-0">Xóa sản phẩm</h2>
+    <p class="text-muted">Bạn có chắc chắn muốn xóa sản phẩm này? Thao tác này không thể hoàn tác.</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card border border-danger shadow-sm bg-white p-4">
+            <div class="alert alert-warning mb-4">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <strong>Cảnh báo!</strong> Sản phẩm này sẽ bị xóa khỏi gian hàng bán lẻ. Các đơn hàng cũ đã đặt sản phẩm này sẽ bị ảnh hưởng nếu không được cấu hình ràng buộc đúng.
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-3 detail-label">ID</div>
+                <div class="col-9 detail-value">#@Model.Id</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3 detail-label">Tên sản phẩm</div>
+                <div class="col-9 detail-value fw-semibold text-dark">@Model.Name</div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3 detail-label">Danh mục</div>
+                <div class="col-9 detail-value">@Model.CategoryProduct?.Name</div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-3 detail-label">Giá bán</div>
+                <div class="col-9 detail-value fw-medium text-indigo">@Model.Price.ToString("N0") đ</div>
+            </div>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-danger flex-fill py-2">
+                        <i class="bi bi-trash-fill me-1"></i> Xác nhận xóa
+                    </button>
+                    <a asp-action="Index" class="btn btn-light border flex-fill py-2">Hủy bỏ</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,190 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@model IEnumerable<CMS.Data.Entities.Order>
+@{
+    ViewData["Title"] = "Dashboard Thống kê";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold mb-0">Dashboard Thống kê</h2>
+        <p class="text-muted mb-0">Tổng quan tình hình hoạt động của hệ thống ThangCMS</p>
+    </div>
+    <div>
+        <span class="badge bg-light text-dark border p-2">
+            <i class="bi bi-clock me-1"></i> Hôm nay: @DateTime.Now.ToString("dd/MM/yyyy")
+        </span>
+    </div>
+</div>
+
+<!-- Stats Cards -->
+<div class="row g-4 mb-4">
+    <!-- Stat 1: Posts -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-stats h-100 p-3 bg-white border">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted fw-semibold fs-7 d-block mb-1">BÀI VIẾT</span>
+                    <h3 class="fw-bold mb-0">@ViewBag.TotalPosts</h3>
+                    <small class="text-muted">Trong @ViewBag.TotalCategories danh mục</small>
+                </div>
+                <div class="card-stats-icon bg-primary bg-opacity-10 text-primary">
+                    <i class="bi bi-file-earmark-text"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 2: Products -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-stats h-100 p-3 bg-white border">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted fw-semibold fs-7 d-block mb-1">SẢN PHẨM</span>
+                    <h3 class="fw-bold mb-0">@ViewBag.TotalProducts</h3>
+                    <small class="text-muted">Đang bán trên hệ thống</small>
+                </div>
+                <div class="card-stats-icon bg-info bg-opacity-10 text-info">
+                    <i class="bi bi-box-seam"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 3: Orders -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-stats h-100 p-3 bg-white border">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted fw-semibold fs-7 d-block mb-1">ĐƠN HÀNG</span>
+                    <h3 class="fw-bold mb-0">@ViewBag.TotalOrders</h3>
+                    <small class="text-muted">Khách đặt mua</small>
+                </div>
+                <div class="card-stats-icon bg-warning bg-opacity-10 text-warning">
+                    <i class="bi bi-cart3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stat 4: Revenue -->
+    <div class="col-md-6 col-lg-3">
+        <div class="card card-stats h-100 p-3 bg-white border">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <span class="text-muted fw-semibold fs-7 d-block mb-1">DOANH THU</span>
+                    <h3 class="fw-bold mb-0">@ViewBag.TotalRevenue.ToString("N0") <span class="fs-6">đ</span></h3>
+                    <small class="text-success fw-medium"><i class="bi bi-check-circle"></i> Đơn đã hoàn thành</small>
+                </div>
+                <div class="card-stats-icon bg-success bg-opacity-10 text-success">
+                    <i class="bi bi-currency-dollar"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Recent Orders Table -->
+    <div class="col-12 col-xl-8 mb-4">
+        <div class="card border border-light shadow-sm">
+            <div class="card-header bg-white border-0 py-3 d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold mb-0">Đơn hàng mới nhận</h5>
+                <a asp-controller="Orders" asp-action="Index" class="btn btn-sm btn-outline-primary">Xem tất cả</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>Mã ĐH</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Trạng thái</th>
+                            <th class="text-end">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="5" class="text-center py-4 text-muted">Chưa có đơn hàng nào được đặt.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var order in Model)
+                            {
+                                string statusText = order.Status switch
+                                {
+                                    0 => "Chờ duyệt",
+                                    1 => "Đang giao",
+                                    2 => "Đã xong",
+                                    _ => "Không rõ"
+                                };
+                                string statusClass = order.Status switch
+                                {
+                                    0 => "badge-status-pending",
+                                    1 => "badge-status-shipping",
+                                    2 => "badge-status-completed",
+                                    _ => "bg-secondary text-white"
+                                };
+
+                                <tr>
+                                    <td><strong>#@order.Id</strong></td>
+                                    <td>@order.Customer?.FullName</td>
+                                    <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>
+                                        <span class="badge-status @statusClass">@statusText</span>
+                                    </td>
+                                    <td class="text-end">
+                                        <a asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id" class="btn btn-sm btn-light border">
+                                            <i class="bi bi-eye"></i> Xem
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="col-12 col-xl-4 mb-4">
+        <div class="card border border-light shadow-sm h-100">
+            <div class="card-header bg-white border-0 py-3">
+                <h5 class="fw-bold mb-0">Lối tắt nhanh</h5>
+            </div>
+            <div class="card-body pt-0">
+                <div class="list-group list-group-flush">
+                    <a asp-controller="Posts" asp-action="Create" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold">Viết bài mới</h6>
+                            <small class="text-muted">Tạo bài viết tin tức blog mới</small>
+                        </div>
+                    </a>
+                    <a asp-controller="Products" asp-action="Create" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+                        <div class="bg-info bg-opacity-10 text-info rounded p-2 me-3">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold">Thêm sản phẩm</h6>
+                            <small class="text-muted">Đăng sản phẩm mới lên gian hàng</small>
+                        </div>
+                    </a>
+                    <a asp-controller="Users" asp-action="Create" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+                        <div class="bg-success bg-opacity-10 text-success rounded p-2 me-3">
+                            <i class="bi bi-person-plus-fill"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold">Tạo tài khoản quản trị</h6>
+                            <small class="text-muted">Bổ sung quản trị viên/biên tập viên</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

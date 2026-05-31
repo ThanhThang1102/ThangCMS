@@ -1,0 +1,110 @@
+@model CMS.Data.Entities.Order
+
+@{
+    ViewData["Title"] = $"Xử lý Đơn hàng #{Model.Id}";
+}
+
+<div class="mb-4">
+    <a asp-action="Index" class="btn btn-sm btn-light border mb-2">
+        <i class="bi bi-arrow-left"></i> Quay lại danh sách
+    </a>
+    <h2 class="fw-bold mb-0">Xử lý Đơn hàng #@Model.Id</h2>
+    <p class="text-muted">Cập nhật trạng thái giao nhận và bổ sung ghi chú quản trị</p>
+</div>
+
+<div class="row">
+    <!-- Form Edit Status & Notes -->
+    <div class="col-lg-5 mb-4">
+        <div class="card border border-light shadow-sm bg-white p-4">
+            <h5 class="fw-bold mb-3 border-bottom pb-2">Thông tin xử lý</h5>
+            
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="OrderDate" />
+                <input type="hidden" asp-for="CustomerId" />
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-muted">Khách hàng đặt hàng</label>
+                    <input type="text" class="form-control bg-light" value="@Model.Customer?.FullName" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-muted">Ngày đặt</label>
+                    <input type="text" class="form-control bg-light" value="@Model.OrderDate.ToString("dd/MM/yyyy HH:mm")" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Status" class="form-label fw-semibold text-dark">Trạng thái đơn hàng</label>
+                    <select asp-for="Status" class="form-select" asp-items="ViewBag.StatusList"></select>
+                    <span asp-validation-for="Status" class="text-danger fs-7"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Notes" class="form-label fw-semibold text-dark">Ghi chú quản lý</label>
+                    <textarea asp-for="Notes" class="form-control" rows="4" placeholder="Nhập ghi chú xử lý (ví dụ: Đã gọi điện xác nhận, đang chờ đóng gói...)..."></textarea>
+                    <span asp-validation-for="Notes" class="text-danger fs-7"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2">
+                    <i class="bi bi-save me-1"></i> Lưu trạng thái & Ghi chú
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Read-only Order Items for reference -->
+    <div class="col-lg-7 mb-4">
+        <div class="card border border-light shadow-sm bg-white">
+            <div class="card-header bg-white border-0 py-3">
+                <h5 class="fw-bold mb-0">Sản phẩm trong đơn hàng</h5>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th class="text-end">Đơn giá</th>
+                            <th class="text-center">Số lượng</th>
+                            <th class="text-end">Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.OrderDetails == null || !Model.OrderDetails.Any())
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center py-3 text-muted">Không có sản phẩm nào.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            decimal total = 0;
+                            foreach (var detail in Model.OrderDetails)
+                            {
+                                decimal subtotal = detail.Quantity * detail.UnitPrice;
+                                total += subtotal;
+                                <tr>
+                                    <td>
+                                        <span class="fw-semibold text-dark">@detail.Product?.Name</span>
+                                    </td>
+                                    <td class="text-end">@detail.UnitPrice.ToString("N0") đ</td>
+                                    <td class="text-center fw-medium">@detail.Quantity</td>
+                                    <td class="text-end fw-semibold text-dark">@subtotal.ToString("N0") đ</td>
+                                </tr>
+                            }
+                            <tr class="table-light">
+                                <td colspan="3" class="fw-bold text-dark text-end">TỔNG CỘNG:</td>
+                                <td class="text-end fw-bold text-indigo fs-6">@total.ToString("N0") đ</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,77 @@
+@model IEnumerable<CMS.Data.Entities.Post>
+
+@{
+    ViewData["Title"] = "Quản lý Bài viết";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold mb-0">Quản lý Bài viết</h2>
+        <p class="text-muted mb-0">Danh sách các bài viết tin tức và blog trên hệ thống</p>
+    </div>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> Viết bài mới
+    </a>
+</div>
+
+<div class="card border border-light shadow-sm">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th style="width: 80px;">Hình ảnh</th>
+                    <th>Tiêu đề bài viết</th>
+                    <th>Danh mục</th>
+                    <th>Ngày đăng</th>
+                    <th class="text-end">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="text-center py-4 text-muted">Chưa có bài viết nào.</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><strong>#@item.Id</strong></td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img src="@item.ImageUrl" class="rounded border" style="width: 60px; height: 45px; object-fit: cover;" alt="Thumbnail" />
+                                }
+                                else
+                                {
+                                    <div class="rounded border bg-light d-flex align-items-center justify-content-center text-muted" style="width: 60px; height: 45px; font-size: 0.75rem;">No Image</div>
+                                }
+                            </td>
+                            <td>
+                                <span class="fw-semibold text-dark">@item.Title</span>
+                            </td>
+                            <td>
+                                <span class="badge bg-light text-dark border p-2">@item.Category?.Name</span>
+                            </td>
+                            <td class="text-muted">@item.CreatedDate.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td class="text-end">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-light border text-primary me-1">
+                                    <i class="bi bi-pencil"></i> Sửa
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-light border text-info me-1">
+                                    <i class="bi bi-info-circle"></i> Chi tiết
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-light border text-danger">
+                                    <i class="bi bi-trash"></i> Xóa
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
