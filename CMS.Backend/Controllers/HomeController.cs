@@ -25,7 +25,7 @@ namespace CMS.Backend.Controllers
             ViewBag.TotalProducts = await _context.Products.CountAsync();
             ViewBag.TotalCustomers = await _context.Customers.CountAsync();
             ViewBag.TotalOrders = await _context.Orders.CountAsync();
-            
+
             // Tính tổng doanh thu từ các đơn hàng đã hoàn thành (Status = 2)
             ViewBag.TotalRevenue = await _context.OrderDetails
                 .Where(od => od.Order != null && od.Order.Status == 2)
