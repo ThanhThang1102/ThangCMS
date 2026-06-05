@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\pages\\homepage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\pages\\homepage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\pages\\homepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\pages\\homepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\controllers\\api\\postsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\controllers\\api\\postsapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +43,8 @@
       "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,24 +54,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "CMS.Backend\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "CMS.Backend\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwDcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "PostsController.cs",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\PostsController.cs",
+              "RelativeDocumentMoniker": "CMS.Backend\\Controllers\\PostsController.cs",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\PostsController.cs",
+              "RelativeToolTip": "CMS.Backend\\Controllers\\PostsController.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAqwNwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T14:43:21.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-04T14:24:05.926Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "CMS.Backend\\Controllers\\CategoriesController.cs",
@@ -63,12 +78,84 @@
               "RelativeToolTip": "CMS.Backend\\Controllers\\CategoriesController.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAowJgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-01T14:39:53.748Z",
+              "WhenOpened": "2026-06-01T14:39:53.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CMS.Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T14:16:26.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "CMS.Backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
+              "RelativeToolTip": "CMS.Backend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-23T14:16:26.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "CMS.Data\\ApplicationDbContextFactory.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T14:16:26.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "PostsApiController.cs",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\Api\\PostsApiController.cs",
+              "RelativeDocumentMoniker": "CMS.Backend\\Controllers\\Api\\PostsApiController.cs",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\Api\\PostsApiController.cs",
+              "RelativeToolTip": "CMS.Backend\\Controllers\\Api\\PostsApiController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAqwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T14:24:34.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePage.jsx",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\HomePage.jsx",
+              "RelativeDocumentMoniker": "CMS.Frontend\\src\\pages\\HomePage.jsx",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\HomePage.jsx",
+              "RelativeToolTip": "CMS.Frontend\\src\\pages\\HomePage.jsx",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-06-05T13:23:58.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomePage.css",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\HomePage.css",
+              "RelativeDocumentMoniker": "CMS.Frontend\\src\\pages\\HomePage.css",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\HomePage.css",
+              "RelativeToolTip": "CMS.Frontend\\src\\pages\\HomePage.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-06-05T13:23:53.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "CMS.Backend\\Controllers\\AccountController.cs",
@@ -76,60 +163,31 @@
               "RelativeToolTip": "CMS.Backend\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAAcwAUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-31T14:45:10.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-31T14:45:10.085Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContextFactory.cs",
-              "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContextFactory.cs",
-              "RelativeToolTip": "CMS.Data\\ApplicationDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T14:16:26.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Program.cs",
               "RelativeDocumentMoniker": "CMS.Backend\\Program.cs",
               "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Program.cs",
               "RelativeToolTip": "CMS.Backend\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T14:16:26.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T14:16:26.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "CMS.Backend\\appsettings.json",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
-              "RelativeToolTip": "CMS.Backend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-23T14:16:26.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "CMS.Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA5wA0AAAAfAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CMS.Backend\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CMS.Backend\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAA3wDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T14:16:26.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-01T14:43:21.123Z"
             }
           ]
         }

@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "CMS.Backend.Controllers.Api.AdvertisementsApiController",
+    "Method": "GetAll",
+    "RelativePath": "api/advertisements",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CMS.Backend.Controllers.Api.CategoriesApiController",
     "Method": "GetAll",
     "RelativePath": "api/categories",
@@ -162,6 +172,22 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CMS.Backend.Controllers.Api.CustomersApiController",
+    "Method": "Login",
+    "RelativePath": "api/customers/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginModel",
+        "Type": "CMS.Data.Entities.Customer",
         "IsRequired": true
       }
     ],
@@ -470,6 +496,16 @@
   },
   {
     "ContainingType": "CMS.Backend.Controllers.Api.ProductsApiController",
+    "Method": "GetBestSellers",
+    "RelativePath": "api/products/bestsellers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CMS.Backend.Controllers.Api.ProductsApiController",
     "Method": "GetByCategory",
     "RelativePath": "api/products/category/{categoryProductId}",
     "HttpMethod": "GET",
@@ -482,6 +518,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CMS.Backend.Controllers.Api.ProductsApiController",
+    "Method": "GetNewest",
+    "RelativePath": "api/products/newest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

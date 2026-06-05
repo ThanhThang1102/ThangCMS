@@ -1,0 +1,84 @@
+@model CMS.Data.Entities.Advertisement
+
+@{
+    ViewData["Title"] = "Chỉnh sửa Banner";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="h3 mb-0 text-gray-800">Chỉnh sửa Banner</h2>
+    <a asp-action="Index" class="btn btn-outline-secondary shadow-sm">
+        <i class="bi bi-arrow-left me-1"></i> Quay lại
+    </a>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="mb-3">
+                        <label asp-for="Title" class="form-label fw-bold">Tiêu đề Banner <span class="text-danger">*</span></label>
+                        <input asp-for="Title" class="form-control" placeholder="Nhập tiêu đề..." />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label fw-bold">Mô tả ngắn</label>
+                        <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Tải lên Ảnh mới (Nếu muốn thay đổi)</label>
+                        <input type="file" name="imageFile" class="form-control" accept="image/*" />
+                        <small class="text-muted">Bỏ trống nếu giữ nguyên ảnh cũ.</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="TargetLink" class="form-label fw-bold">Link Đích (Khi click vào)</label>
+                        <input asp-for="TargetLink" class="form-control" placeholder="/san-pham hoặc https://..." />
+                        <span asp-validation-for="TargetLink" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="DisplayOrder" class="form-label fw-bold">Thứ tự hiển thị</label>
+                            <input asp-for="DisplayOrder" class="form-control" type="number" />
+                            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3 d-flex align-items-end">
+                            <div class="form-check form-switch fs-5 mb-1">
+                                <input class="form-check-input" asp-for="IsActive" />
+                                <label class="form-check-label ms-2 fs-6" asp-for="IsActive">Cho phép hiển thị</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="mt-4 mb-4" />
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-primary px-4"><i class="bi bi-save me-1"></i> Cập nhật</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <label class="form-label fw-bold">Ảnh hiện tại:</label>
+                    <div class="card bg-light">
+                        <div class="card-body text-center p-2">
+                            <img src="@Model.ImageUrl" class="img-fluid rounded shadow-sm" alt="@Model.Title" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -5,6 +5,18 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/advertisements": {
+      "get": {
+        "tags": [
+          "AdvertisementsApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/categories": {
       "get": {
         "tags": [
@@ -260,6 +272,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/customers/login": {
+      "post": {
+        "tags": [
+          "CustomersApi"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Customer"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -741,6 +784,30 @@
         }
       }
     },
+    "/api/products/newest": {
+      "get": {
+        "tags": [
+          "ProductsApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/bestsellers": {
+      "get": {
+        "tags": [
+          "ProductsApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/products/category/{categoryProductId}": {
       "get": {
         "tags": [
@@ -984,6 +1051,7 @@
             "nullable": true
           },
           "price": {
+            "maximum": 1.7976931348623157E+308,
             "minimum": 0,
             "type": "number",
             "format": "double"
@@ -1007,5 +1075,31 @@
         "additionalProperties": false
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "AdvertisementsApi"
+    },
+    {
+      "name": "CategoriesApi"
+    },
+    {
+      "name": "CategoriesProductsApi"
+    },
+    {
+      "name": "CustomersApi"
+    },
+    {
+      "name": "OrderDetailsApi"
+    },
+    {
+      "name": "OrdersApi"
+    },
+    {
+      "name": "PostsApi"
+    },
+    {
+      "name": "ProductsApi"
+    }
+  ]
 }

@@ -10,10 +10,12 @@ namespace CMS.Backend.Controllers.Api
     public class OrdersApiController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly CMS.Backend.Services.IEmailService _emailService;
 
-        public OrdersApiController(ApplicationDbContext context)
+        public OrdersApiController(ApplicationDbContext context, CMS.Backend.Services.IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         // GET: api/orders
@@ -114,10 +116,37 @@ namespace CMS.Backend.Controllers.Api
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            // Kiểm tra tồn kho và trừ số lượng
+            if (model.OrderDetails != null && model.OrderDetails.Any())
+            {
+                foreach (var detail in model.OrderDetails)
+                {
+                    var product = await _context.Products.FindAsync(detail.ProductId);
+                    if (product == null)
+                    {
+                        return BadRequest(new { message = $"Sản phẩm ID {detail.ProductId} không tồn tại." });
+                    }
+                    if (product.StockQuantity < detail.Quantity)
+                    {
+                        return BadRequest(new { message = $"Sản phẩm '{product.Name}' không đủ số lượng tồn kho. Chỉ còn {product.StockQuantity}." });
+                    }
+                    
+                    // Trừ tồn kho
+                    product.StockQuantity -= detail.Quantity;
+                }
+            }
+
             model.OrderDate = DateTime.Now;
             model.Status = 0; // Mặc định: Chờ duyệt
             _context.Orders.Add(model);
             await _context.SaveChangesAsync();
+
+            // Lấy email khách hàng để gửi
+            var customer = await _context.Customers.FindAsync(model.CustomerId);
+            if (customer != null && !string.IsNullOrEmpty(customer.Email))
+            {
+                await _emailService.SendOrderConfirmationAsync(customer.Email, model);
+            }
 
             return CreatedAtAction(nameof(GetById), new { id = model.Id }, new { model.Id, model.OrderDate, model.Status });
         }

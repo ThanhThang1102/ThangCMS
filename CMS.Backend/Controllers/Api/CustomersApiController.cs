@@ -89,6 +89,28 @@ namespace CMS.Backend.Controllers.Api
             });
         }
 
+        // POST: api/customers/login
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] Customer loginModel)
+        {
+            var customer = await _context.Customers
+                .FirstOrDefaultAsync(c => c.Email == loginModel.Email && c.Password == loginModel.Password);
+
+            if (customer == null)
+            {
+                return Unauthorized(new { message = "Email hoặc mật khẩu không chính xác" });
+            }
+
+            return Ok(new
+            {
+                customer.Id,
+                customer.FullName,
+                customer.Email,
+                customer.Phone,
+                customer.Address
+            });
+        }
+
         // PUT: api/customers/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Customer model)

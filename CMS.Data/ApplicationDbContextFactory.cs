@@ -11,7 +11,7 @@ namespace CMS.Data
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
             optionsBuilder.UseSqlServer(
-                "Server=THANG\\SQLEXPRESS;Database=ThangCMS_DB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
+                "Server=THANG\\SQLEXPRESS;Database=ThangCMS_DB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

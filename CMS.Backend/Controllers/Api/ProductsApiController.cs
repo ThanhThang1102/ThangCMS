@@ -61,6 +61,76 @@ namespace CMS.Backend.Controllers.Api
             });
         }
 
+        // GET: api/products/newest
+        [HttpGet("newest")]
+        public async Task<IActionResult> GetNewest()
+        {
+            var products = await _context.Products
+                .OrderByDescending(p => p.Id)
+                .Take(3)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Price,
+                    p.StockQuantity,
+                    p.ImageUrl,
+                    CategoryName = p.CategoryProduct != null ? p.CategoryProduct.Name : null
+                })
+                .ToListAsync();
+
+            return Ok(products);
+        }
+
+        // GET: api/products/bestsellers
+        [HttpGet("bestsellers")]
+        public async Task<IActionResult> GetBestSellers()
+        {
+            var bestSellingProductIds = await _context.OrderDetails
+                .GroupBy(od => od.ProductId)
+                .OrderByDescending(g => g.Sum(od => od.Quantity))
+                .Take(3)
+                .Select(g => g.Key)
+                .ToListAsync();
+
+            var products = await _context.Products
+                .Where(p => bestSellingProductIds.Contains(p.Id))
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Price,
+                    p.StockQuantity,
+                    p.ImageUrl,
+                    CategoryName = p.CategoryProduct != null ? p.CategoryProduct.Name : null
+                })
+                .ToListAsync();
+
+            var orderedProducts = bestSellingProductIds
+                .Select(id => products.FirstOrDefault(p => p.Id == id))
+                .Where(p => p != null)
+                .ToList();
+
+            // Nếu chưa có đơn hàng nào, fallback lấy 3 sản phẩm bất kỳ
+            if (!orderedProducts.Any())
+            {
+                var fallbackProducts = await _context.Products.Take(3)
+                    .Select(p => new
+                    {
+                        p.Id,
+                        p.Name,
+                        p.Price,
+                        p.StockQuantity,
+                        p.ImageUrl,
+                        CategoryName = p.CategoryProduct != null ? p.CategoryProduct.Name : null
+                    })
+                    .ToListAsync();
+                return Ok(fallbackProducts);
+            }
+
+            return Ok(orderedProducts);
+        }
+
         // GET: api/products/category/3
         [HttpGet("category/{categoryProductId}")]
         public async Task<IActionResult> GetByCategory(int categoryProductId)
