@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import postService from '../services/postService';
 import Spinner from '../components/Spinner';
+import { IMAGE_BASE_URL } from '../config';
 import './PostDetailPage.css';
 
 export default function PostDetailPage() {
@@ -40,7 +41,7 @@ export default function PostDetailPage() {
       <article className="article">
         {post.imageUrl && (
           <div className="article-hero-img">
-            <img src={`http://localhost:5035${post.imageUrl}`} alt={post.title} />
+            <img src={`${IMAGE_BASE_URL}${post.imageUrl}`} alt={post.title} />
           </div>
         )}
 
@@ -53,7 +54,7 @@ export default function PostDetailPage() {
 
         <div className="article-body">
           {post.content
-            ? <p>{post.content}</p>
+            ? <div dangerouslySetInnerHTML={{ __html: post.content }} />
             : <p className="no-content">Bài viết chưa có nội dung chi tiết.</p>}
         </div>
 

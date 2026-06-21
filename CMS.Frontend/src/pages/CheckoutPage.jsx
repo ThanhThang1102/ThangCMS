@@ -20,7 +20,7 @@ export default function CheckoutPage() {
   });
   
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [toast, setToast] = useState({ show: false, type: '', message: '' });
 
   // Prefill if logged in
   useEffect(() => {
@@ -47,18 +47,22 @@ export default function CheckoutPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const triggerToast = (type, message) => {
+    setToast({ show: true, type, message });
+    setTimeout(() => {
+      setToast(prev => ({ ...prev, show: false }));
+    }, 4500);
+  };
+
   const handleCheckout = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
 
     try {
       let customerId = user?.id;
 
       // If not logged in, we must create a guest customer
       if (!customerId) {
-        // Just post to create customer, ignoring password requirement since it's guest
-        // (Assuming backend doesn't mandate password or handles null safely)
         const custData = await customerService.register({
           ...formData,
           password: 'GuestUser123!' // Dummy password for guests
@@ -79,10 +83,13 @@ export default function CheckoutPage() {
 
       await orderService.create(orderPayload);
       clearCart();
-      alert('🎉 Đặt hàng thành công! Mã đơn của bạn đã được ghi nhận.');
-      navigate('/');
+      triggerToast('success', 'Đặt hàng thành công! Đang chuyển hướng về trang đơn hàng...');
+      setTimeout(() => {
+        navigate('/don-hang');
+      }, 2000);
     } catch (err) {
-      setError(err.response?.data?.message || 'Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại.');
+      const errMsg = err.response?.data?.message || 'Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại.';
+      triggerToast('error', errMsg);
     } finally {
       setLoading(false);
     }
@@ -90,9 +97,28 @@ export default function CheckoutPage() {
 
   return (
     <div className="checkout-page">
+      {toast.show && (
+        <div className={`checkout-toast toast-${toast.type}`}>
+          <div className="checkout-toast-content">
+            {toast.type === 'success' ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="toast-icon">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="toast-icon">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" x2="12" y1="8" y2="12" />
+                <line x1="12" x2="12.01" y1="16" y2="16" />
+              </svg>
+            )}
+            <span>{toast.message}</span>
+          </div>
+          <button className="checkout-toast-close" onClick={() => setToast({ ...toast, show: false })}>✕</button>
+        </div>
+      )}
+
       <h1>Thanh toán</h1>
-      
-      {error && <div className="checkout-error">{error}</div>}
 
       <div className="checkout-layout">
         <div className="checkout-form-container">

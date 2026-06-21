@@ -151,20 +151,6 @@ D:\Desktop\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore
 D:\Desktop\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Desktop\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Desktop\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.csproj.AssemblyReference.cache
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.AssemblyInfoInputs.cache
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.AssemblyInfo.cs
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.csproj.CoreCompileInputs.cache
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.RazorAssemblyInfo.cache
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.RazorAssemblyInfo.cs
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.sourcelink.json
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.dll
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\refint\CMS.Backend.dll
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.pdb
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\appsettings.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\CMS.Backend.staticwebassets.runtime.json
@@ -292,6 +278,17 @@ C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\CMS.Data.dll
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\bin\Debug\net8.0\CMS.Data.pdb
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.csproj.AssemblyReference.cache
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.AssemblyInfoInputs.cache
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.AssemblyInfo.cs
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.csproj.CoreCompileInputs.cache
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.RazorAssemblyInfo.cache
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.RazorAssemblyInfo.cs
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.sourcelink.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -303,7 +300,9 @@ C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\swae.build.ex.cache
-C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Back.83063402.Up2Date
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.dll
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\refint\CMS.Backend.dll
+C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.pdb
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\CMS.Backend.genruntimeconfig.cache
 C:\Users\Bui Thanh Thang\Desktop\ThangCMS_Solution\ThangCMS_Solution\CMS.Backend\obj\Debug\net8.0\ref\CMS.Backend.dll

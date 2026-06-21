@@ -6,6 +6,7 @@
   border-radius: 20px;
   margin-bottom: 3rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background-color: #0b0d1b;
 }
 
 .banner-slider {
@@ -26,8 +27,9 @@
 .banner-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
@@ -35,7 +37,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+  background: linear-gradient(to right, #0b0d1b 0%, #0b0d1b 35%, rgba(11, 13, 27, 0) 60%);
 }
 
 .banner-content {

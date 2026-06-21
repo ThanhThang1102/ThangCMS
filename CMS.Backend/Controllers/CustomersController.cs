@@ -40,6 +40,7 @@ namespace CMS.Backend.Controllers
                 return NotFound();
             }
 
+            customer.Password = Services.EncryptionHelper.Decrypt(customer.Password);
             return View(customer);
         }
 
@@ -56,6 +57,7 @@ namespace CMS.Backend.Controllers
         {
             if (ModelState.IsValid)
             {
+                customer.Password = Services.EncryptionHelper.Encrypt(customer.Password);
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -76,6 +78,7 @@ namespace CMS.Backend.Controllers
             {
                 return NotFound();
             }
+            customer.Password = Services.EncryptionHelper.Decrypt(customer.Password);
             return View(customer);
         }
 
@@ -93,6 +96,7 @@ namespace CMS.Backend.Controllers
             {
                 try
                 {
+                    customer.Password = Services.EncryptionHelper.Encrypt(customer.Password);
                     _context.Update(customer);
                     await _context.SaveChangesAsync();
                 }

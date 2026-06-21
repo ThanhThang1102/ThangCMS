@@ -34,8 +34,45 @@ namespace CMS.Backend.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == model.Username);
-                if (user != null && BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash))
+                bool isPasswordValid = false;
+                bool shouldMigrateHash = false;
+
+                if (user != null)
                 {
+                    // Giải mã mật khẩu lưu dưới dạng AES
+                    string decryptedPassword = Services.EncryptionHelper.Decrypt(user.PasswordHash);
+                    if (decryptedPassword == model.Password)
+                    {
+                        isPasswordValid = true;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            // Hỗ trợ tương thích ngược cho mật khẩu cũ lưu dạng BCrypt
+                            if (user.PasswordHash != null && user.PasswordHash.StartsWith("$2") && BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash))
+                            {
+                                isPasswordValid = true;
+                                shouldMigrateHash = true;
+                            }
+                        }
+                        catch
+                        {
+                            // Bỏ qua lỗi nếu không phải định dạng BCrypt
+                        }
+                    }
+                }
+
+                if (isPasswordValid)
+                {
+                    if (shouldMigrateHash)
+                    {
+                        // Tự động nâng cấp mã hóa sang AES
+                        user.PasswordHash = Services.EncryptionHelper.Encrypt(model.Password);
+                        _context.Update(user);
+                        await _context.SaveChangesAsync();
+                    }
+
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
@@ -85,7 +122,7 @@ namespace CMS.Backend.Controllers
                 {
                     Username = model.Username,
                     FullName = model.FullName,
-                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password),
+                    PasswordHash = Services.EncryptionHelper.Encrypt(model.Password),
                     Role = "Biên tập viên" // Mặc định là Biên tập viên cho an toàn
                 };
 

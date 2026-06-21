@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import productService from '../services/productService';
+import { useCart } from '../context/CartContext';
+import { IMAGE_BASE_URL } from '../config';
 import './ProductShowcase.css';
 
 export default function NewProducts() {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     productService.getNewest().then(data => {
@@ -18,20 +21,30 @@ export default function NewProducts() {
     <section className="product-showcase">
       <div className="section-header">
         <h2 className="section-title">Sản Phẩm Mới Nhất</h2>
-        <Link to="/shop" className="view-all">Xem tất cả &rarr;</Link>
+        <Link to="/san-pham" className="view-all">Xem tất cả &rarr;</Link>
       </div>
       <div className="product-grid">
         {products.map(product => (
           <div key={product.id} className="product-card">
             <div className="product-image">
-              <img src={`http://localhost:5035${product.imageUrl}`} alt={product.name} />
+              <img src={`${IMAGE_BASE_URL}${product.imageUrl}`} alt={product.name} />
               {product.stockQuantity <= 0 && <div className="out-of-stock">Hết hàng</div>}
             </div>
             <div className="product-info">
               <span className="product-category">{product.categoryName}</span>
-              <h3><Link to={`/product/${product.id}`}>{product.name}</Link></h3>
+              <h3><Link to={`/san-pham/${product.id}`}>{product.name}</Link></h3>
               <div className="product-price">
                 {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}
+              </div>
+              <div className="product-card-actions">
+                <Link to={`/san-pham/${product.id}`} className="btn-details">Chi tiết</Link>
+                <button 
+                  onClick={() => addToCart(product, 1)} 
+                  disabled={product.stockQuantity <= 0}
+                  className="btn-add-to-cart"
+                >
+                  {product.stockQuantity <= 0 ? 'Hết hàng' : 'Thêm vào giỏ'}
+                </button>
               </div>
             </div>
           </div>

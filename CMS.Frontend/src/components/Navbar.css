@@ -94,24 +94,105 @@
 }
 .nav-login:hover { color: #c4b5fd; text-decoration: underline; }
 
-.user-menu {
+/* User Dropdown Menu */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 6px;
+  transition: all 0.2s ease;
 }
-.user-greeting {
+
+.dropdown-trigger:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(250, 204, 21, 0.4);
+}
+
+.dropdown-trigger .arrow {
+  font-size: 0.65rem;
+  transition: transform 0.2s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.user-dropdown:hover .dropdown-trigger .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #0d1127;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 6px 0;
+  list-style: none;
+  min-width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.user-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a,
+.dropdown-menu li button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.85rem;
-  color: #fff;
   font-weight: 500;
-  background: rgba(255,255,255,0.08);
-  padding: 4px 12px;
-  border-radius: 999px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
 }
-.btn-logout {
-  background: none; border: none; color: #f87171; cursor: pointer;
-  font-size: 0.85rem; font-weight: 600; padding: 0;
+
+.dropdown-menu li a:hover,
+.dropdown-menu li button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #facc15;
 }
-.btn-logout:hover { text-decoration: underline; }
+
+.dropdown-menu .divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 6px 0;
+}
+
+.btn-logout-dropdown {
+  color: #f87171 !important;
+}
+
+.btn-logout-dropdown:hover {
+  background: rgba(248, 113, 113, 0.08) !important;
+  color: #f87171 !important;
+}
 
 .nav-cart {
   position: relative;
@@ -157,7 +238,6 @@
 
 @media (max-width: 768px) {
   .navbar-actions { gap: 1rem; }
-  .user-greeting { display: none; }
 }
 
 @media (max-width: 640px) {

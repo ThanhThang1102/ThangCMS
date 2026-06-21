@@ -120,3 +120,221 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Categories menu styles */
+.categories-menu-section {
+  margin-bottom: 4rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.category-menu-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-menu-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(250, 204, 21, 0.1) 100%);
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.15);
+}
+
+.category-menu-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.category-menu-card:hover .category-menu-icon {
+  transform: scale(1.15);
+}
+
+.category-menu-name {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.category-menu-card:hover .category-menu-name {
+  color: #facc15;
+}
+
+/* Responsiveness for categories grid */
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .category-menu-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .category-menu-icon {
+    font-size: 2rem;
+  }
+  
+  .category-menu-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* Home Search Bar Section */
+.home-search-section {
+  display: flex;
+  justify-content: center;
+  margin: -2rem auto 3rem auto; /* Overlap slightly with Hero Banner */
+  padding: 0 1rem;
+  max-width: 600px;
+  position: relative;
+  z-index: 10;
+}
+.home-search-container {
+  width: 100%;
+  position: relative;
+}
+.home-search-bar {
+  display: flex;
+  align-items: center;
+  background: #1e1f29;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  padding: 6px 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  margin-top: 2rem; /* Adjusted to overlap with Hero Banner */
+}
+.home-search-bar:focus-within {
+  border-color: #facc15;
+  box-shadow: 0 10px 25px rgba(250, 204, 21, 0.15);
+  background: #252633;
+}
+.home-search-icon {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-right: 12px;
+}
+.home-search-bar input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+}
+.home-search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+.home-search-clear {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
+}
+.home-search-clear:hover {
+  color: #fff;
+}
+
+/* Autocomplete Dropdown */
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: #1e1f29;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 20;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+.dropdown-item:hover {
+  background: rgba(250, 204, 21, 0.08);
+}
+.dropdown-item-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.no-img-placeholder {
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+.dropdown-item-info {
+  flex: 1;
+}
+.dropdown-item-name {
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.dropdown-item-price {
+  color: #34d399;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.empty-dropdown {
+  padding: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+

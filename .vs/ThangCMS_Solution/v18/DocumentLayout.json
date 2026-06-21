@@ -3,35 +3,43 @@
   "WorkspaceRootPath": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\pages\\shoppage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\pages\\shoppage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\context\\cartcontext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\context\\cartcontext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\context\\cartcontext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\context\\authcontext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\context\\authcontext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\context\\authcontext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\components\\bestsellingproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\components\\bestsellingproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\components\\bestsellingproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\components\\herobanner.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\components\\herobanner.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\components\\herobanner.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\components\\spinner.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\components\\spinner.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\components\\spinner.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\components\\newproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\components\\newproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\components\\newproducts.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
@@ -39,20 +47,12 @@
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\pages\\homepage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.frontend\\src\\pages\\blogpage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\pages\\blogpage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|solutionrelative:cms.frontend\\src\\pages\\blogpage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B185C6EB-DC68-4EC9-A346-4FC158C32C73}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|c:\\users\\bui thanh thang\\desktop\\thangcms_solution\\thangcms_solution\\cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7ECE8801-C00E-4D37-B237-2834C56D6CE1}|CMS.Data\\CMS.Data.csproj|solutionrelative:cms.data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BFC96697-7D92-84DD-AB7A-313652811C56}|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend|C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\cms.frontend\\src\\pages\\homepage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -90,50 +90,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ShopPage.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\ShopPage.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\pages\\ShopPage.jsx",
               "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\ShopPage.jsx",
               "RelativeToolTip": "CMS.Frontend\\src\\pages\\ShopPage.jsx",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAUwHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2026-06-05T17:21:44.769Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CartContext.jsx",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\CartContext.jsx",
-              "RelativeDocumentMoniker": "CMS.Frontend\\src\\context\\CartContext.jsx",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\CartContext.jsx",
-              "RelativeToolTip": "CMS.Frontend\\src\\context\\CartContext.jsx",
-              "ViewState": "AgIAACAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:21:38.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthContext.jsx",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\AuthContext.jsx",
-              "RelativeDocumentMoniker": "CMS.Frontend\\src\\context\\AuthContext.jsx",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\AuthContext.jsx",
-              "RelativeToolTip": "CMS.Frontend\\src\\context\\AuthContext.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:21:36.128Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BestSellingProducts.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\components\\BestSellingProducts.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\components\\BestSellingProducts.jsx",
@@ -141,12 +115,11 @@
               "RelativeToolTip": "CMS.Frontend\\src\\components\\BestSellingProducts.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:21:25.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T17:21:25.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "HeroBanner.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\components\\HeroBanner.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\components\\HeroBanner.jsx",
@@ -154,12 +127,11 @@
               "RelativeToolTip": "CMS.Frontend\\src\\components\\HeroBanner.jsx",
               "ViewState": "AgIAABQAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:21:20.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T17:21:20.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Spinner.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\components\\Spinner.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\components\\Spinner.jsx",
@@ -167,12 +139,61 @@
               "RelativeToolTip": "CMS.Frontend\\src\\components\\Spinner.jsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:21:16.874Z",
+              "WhenOpened": "2026-06-05T17:21:16.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CMS.Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T14:16:26.435Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "CMS.Backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
+              "RelativeToolTip": "CMS.Backend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-23T14:16:26.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthContext.jsx",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\AuthContext.jsx",
+              "RelativeDocumentMoniker": "CMS.Frontend\\src\\context\\AuthContext.jsx",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\AuthContext.jsx",
+              "RelativeToolTip": "CMS.Frontend\\src\\context\\AuthContext.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-06-05T17:21:36.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartContext.jsx",
+              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\CartContext.jsx",
+              "RelativeDocumentMoniker": "CMS.Frontend\\src\\context\\CartContext.jsx",
+              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\context\\CartContext.jsx",
+              "RelativeToolTip": "CMS.Frontend\\src\\context\\CartContext.jsx",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-06-05T17:21:38.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "NewProducts.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\components\\NewProducts.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\components\\NewProducts.jsx",
@@ -180,12 +201,11 @@
               "RelativeToolTip": "CMS.Frontend\\src\\components\\NewProducts.jsx",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:20:57.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T17:20:57.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Navbar.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\components\\Navbar.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\components\\Navbar.jsx",
@@ -193,12 +213,11 @@
               "RelativeToolTip": "CMS.Frontend\\src\\components\\Navbar.jsx",
               "ViewState": "AgIAACEAAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:20:44.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T17:20:44.639Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "BlogPage.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\BlogPage.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\pages\\BlogPage.jsx",
@@ -206,8 +225,7 @@
               "RelativeToolTip": "CMS.Frontend\\src\\pages\\BlogPage.jsx",
               "ViewState": "AgIAAFMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T17:20:21.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T17:20:21.077Z"
             },
             {
               "$type": "Document",
@@ -223,31 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "CMS.Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAswA0AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T14:16:26.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "CMS.Backend\\appsettings.json",
-              "ToolTip": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Backend\\appsettings.json",
-              "RelativeToolTip": "CMS.Backend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-23T14:16:26.433Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "HomePage.jsx",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Frontend\\src\\pages\\HomePage.jsx",
               "RelativeDocumentMoniker": "CMS.Frontend\\src\\pages\\HomePage.jsx",
@@ -255,8 +249,7 @@
               "RelativeToolTip": "CMS.Frontend\\src\\pages\\HomePage.jsx",
               "ViewState": "AgIAAC8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-06-05T13:23:58.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T13:23:58.538Z"
             },
             {
               "$type": "Document",
@@ -272,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ApplicationDbContextFactory.cs",
               "DocumentMoniker": "C:\\Users\\Bui Thanh Thang\\Desktop\\ThangCMS_Solution\\ThangCMS_Solution\\CMS.Data\\ApplicationDbContextFactory.cs",
               "RelativeDocumentMoniker": "CMS.Data\\ApplicationDbContextFactory.cs",
@@ -280,8 +273,7 @@
               "RelativeToolTip": "CMS.Data\\ApplicationDbContextFactory.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwBIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T14:16:26.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-23T14:16:26.319Z"
             },
             {
               "$type": "Document",

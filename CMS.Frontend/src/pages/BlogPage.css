@@ -110,3 +110,46 @@
 .read-more { font-size: 0.82rem; color: #fb923c; font-weight: 600; }
 
 .empty-state { text-align: center; padding: 4rem; color: rgba(255,255,255,0.3); }
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3rem;
+}
+
+.page-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: rgba(167, 139, 250, 0.18);
+  border-color: #fb923c;
+  color: #fb923c;
+}
+
+.page-btn.active {
+  background: #facc15;
+  border-color: #facc15;
+  color: #090c1f;
+  font-weight: 700;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.prev-btn, .next-btn {
+  padding: 8px 14px;
+}

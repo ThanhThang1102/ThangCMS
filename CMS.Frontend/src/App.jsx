@@ -7,8 +7,12 @@ import BlogPage from './pages/BlogPage';
 import PostDetailPage from './pages/PostDetailPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import ContactPage from './pages/ContactPage';
+import ProfilePage from './pages/ProfilePage';
+import OrdersPage from './pages/OrdersPage';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import './index.css';
@@ -29,12 +33,16 @@ export default function App() {
                 <Route path="/tin-tuc/:id" element={<PostDetailPage />} />
                 <Route path="/dang-nhap" element={<LoginPage />} />
                 <Route path="/dang-ky" element={<RegisterPage />} />
+                <Route path="/quen-mat-khau" element={<ForgotPasswordPage />} />
                 <Route path="/gio-hang" element={<CartPage />} />
                 <Route path="/thanh-toan" element={<CheckoutPage />} />
+                <Route path="/lien-he" element={<ContactPage />} />
+                <Route path="/ho-so" element={<ProfilePage />} />
+                <Route path="/don-hang" element={<OrdersPage />} />
               </Routes>
             </main>
             <footer className="footer">
-              <p>© 2026 Nabati Store Vietnam — Thơm ngon tới miếng cuối cùng 🧀</p>
+              <p>© 2026 Nabati Store Vietnam — Thơm ngon tới miếng cuối cùng</p>
             </footer>
           </div>
         </BrowserRouter>

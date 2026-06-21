@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { IMAGE_BASE_URL } from '../config';
 import './CartPage.css';
 
 export default function CartPage() {
@@ -32,7 +33,7 @@ export default function CartPage() {
             <div key={item.productId} className="cart-item">
               <div className="item-img">
                 {item.imageUrl 
-                  ? <img src={`http://localhost:5035${item.imageUrl}`} alt={item.name} />
+                  ? <img src={`${IMAGE_BASE_URL}${item.imageUrl}`} alt={item.name} />
                   : <div className="no-img-sm">📦</div>}
               </div>
               

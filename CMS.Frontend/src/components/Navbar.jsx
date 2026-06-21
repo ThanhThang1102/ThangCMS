@@ -35,13 +35,27 @@ export default function Navbar() {
           <li><Link to="/" className={isActive('/') && location.pathname === '/' ? 'active' : ''} onClick={() => setMenuOpen(false)}>Trang chủ</Link></li>
           <li><Link to="/san-pham" className={isActive('/san-pham') ? 'active' : ''} onClick={() => setMenuOpen(false)}>Sản phẩm</Link></li>
           <li><Link to="/tin-tuc" className={isActive('/tin-tuc') ? 'active' : ''} onClick={() => setMenuOpen(false)}>Tin tức</Link></li>
+          <li><Link to="/lien-he" className={isActive('/lien-he') ? 'active' : ''} onClick={() => setMenuOpen(false)}>Liên hệ</Link></li>
         </ul>
         
         <div className="navbar-actions">
           {user ? (
-            <div className="user-menu">
-              <span className="user-greeting">👋 Chào, {user.fullName?.split(' ').pop() || user.email}</span>
-              <button className="btn-logout" onClick={handleLogout}>Đăng xuất</button>
+            <div className="user-dropdown">
+              <button className="dropdown-trigger">
+                Chào, {user.fullName?.split(' ').pop() || user.email} <span className="arrow">▼</span>
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/ho-so">Hồ sơ cá nhân</Link>
+                </li>
+                <li>
+                  <Link to="/don-hang">Đơn hàng của tôi</Link>
+                </li>
+                <li className="divider"></li>
+                <li>
+                  <button className="btn-logout-dropdown" onClick={handleLogout}>Đăng xuất</button>
+                </li>
+              </ul>
             </div>
           ) : (
             <Link to="/dang-nhap" className="nav-login">Đăng nhập</Link>

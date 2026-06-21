@@ -198,5 +198,32 @@ namespace CMS.Backend.Controllers.Api
 
             return Ok(new { message = "Xóa sản phẩm thành công" });
         }
+
+        // GET: api/products/search?q=nabati
+        [HttpGet("search")]
+        public async Task<IActionResult> Search([FromQuery] string q)
+        {
+            if (string.IsNullOrEmpty(q))
+            {
+                return Ok(new List<object>());
+            }
+
+            var products = await _context.Products
+                .Where(p => p.Name.Contains(q) || (p.Description != null && p.Description.Contains(q)))
+                .OrderByDescending(p => p.Id)
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Name,
+                    p.Description,
+                    p.Price,
+                    p.StockQuantity,
+                    p.ImageUrl,
+                    CategoryName = p.CategoryProduct != null ? p.CategoryProduct.Name : null
+                })
+                .ToListAsync();
+
+            return Ok(products);
+        }
     }
 }

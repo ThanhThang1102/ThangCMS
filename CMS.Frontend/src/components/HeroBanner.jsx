@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import advertisementService from '../services/advertisementService';
+import { IMAGE_BASE_URL } from '../config';
 import './HeroBanner.css';
 
 export default function HeroBanner() {
@@ -32,7 +33,7 @@ export default function HeroBanner() {
         {ads.map(ad => (
           <div key={ad.id} className="banner-slide">
             {/* Fallback pattern if no image */}
-            <div className="banner-bg" style={{ backgroundImage: `url(http://localhost:5035${ad.imageUrl})` }}></div>
+              <div className="banner-bg" style={{ backgroundImage: `url(${IMAGE_BASE_URL}${ad.imageUrl})` }}></div>
             <div className="banner-content">
               <h2>{ad.title}</h2>
               <p>{ad.description}</p>

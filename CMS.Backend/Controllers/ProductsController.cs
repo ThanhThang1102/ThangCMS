@@ -22,10 +22,20 @@ namespace CMS.Backend.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            var products = _context.Products.Include(p => p.CategoryProduct);
-            return View(await products.ToListAsync());
+            int pageSize = 5;
+            int pageNumber = page ?? 1;
+
+            var query = _context.Products.Include(p => p.CategoryProduct).OrderByDescending(p => p.Id);
+
+            int totalItems = await query.CountAsync();
+            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            return View(items);
         }
 
         // GET: Products/Details/5

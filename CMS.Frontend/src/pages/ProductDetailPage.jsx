@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import productService from '../services/productService';
 import { useCart } from '../context/CartContext';
 import Spinner from '../components/Spinner';
+import { IMAGE_BASE_URL } from '../config';
 import './ProductDetailPage.css';
 
 export default function ProductDetailPage() {
@@ -42,7 +43,7 @@ export default function ProductDetailPage() {
       <div className="detail-layout">
         <div className="detail-img">
           {product.imageUrl
-            ? <img src={`http://localhost:5035${product.imageUrl}`} alt={product.name} />
+            ? <img src={`${IMAGE_BASE_URL}${product.imageUrl}`} alt={product.name} />
             : <div className="no-img-lg">📦</div>}
         </div>
 
@@ -55,7 +56,7 @@ export default function ProductDetailPage() {
 
           <div className="detail-stock">
             <span className={`stock-badge ${product.stockQuantity === 0 ? 'out' : 'in'}`}>
-              {product.stockQuantity === 0 ? '❌ Hết hàng' : `✅ Còn ${product.stockQuantity} sản phẩm`}
+              {product.stockQuantity === 0 ? 'Hết hàng' : `Còn ${product.stockQuantity} sản phẩm`}
             </span>
           </div>
 

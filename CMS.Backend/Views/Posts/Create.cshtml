@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-12">
         <div class="card border border-light shadow-sm p-4 bg-white mb-4">
             <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
@@ -53,4 +53,32 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script src="~/lib/ckeditor5/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Content'), {
+                toolbar: [
+                    'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|', 'undo', 'redo'
+                ]
+            })
+            .then(editor => {
+                // Sync editor data back to textarea for ASP.NET MVC model validation
+                editor.model.document.on('change:data', () => {
+                    document.querySelector('#Content').value = editor.getData();
+                });
+            })
+            .catch(error => {
+                console.error('Lỗi khởi tạo CKEditor:', error);
+            });
+    </script>
 }
+
+<style>
+    .ck-editor__editable_inline {
+        min-height: 400px;
+        color: #212529 !important; /* Ensure text is dark and readable on white editor background */
+    }
+</style>
+
+

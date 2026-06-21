@@ -39,6 +39,7 @@ namespace CMS.Backend.Controllers
                 return NotFound();
             }
 
+            user.PasswordHash = Services.EncryptionHelper.Decrypt(user.PasswordHash);
             return View(user);
         }
 
@@ -55,7 +56,8 @@ namespace CMS.Backend.Controllers
         {
             if (ModelState.IsValid)
             {
-                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
+                // Mã hóa mật khẩu lưu vào DB dưới dạng AES
+                user.PasswordHash = Services.EncryptionHelper.Encrypt(user.PasswordHash);
                 _context.Add(user);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -76,6 +78,7 @@ namespace CMS.Backend.Controllers
             {
                 return NotFound();
             }
+            user.PasswordHash = Services.EncryptionHelper.Decrypt(user.PasswordHash);
             return View(user);
         }
 
@@ -111,7 +114,7 @@ namespace CMS.Backend.Controllers
                     }
                     else
                     {
-                        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
+                        user.PasswordHash = Services.EncryptionHelper.Encrypt(user.PasswordHash);
                     }
 
                     _context.Update(user);

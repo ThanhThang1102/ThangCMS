@@ -13,7 +13,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-8 col-lg-6">
+    <div class="col-12">
         <div class="card border border-light shadow-sm p-4 bg-white">
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
@@ -26,8 +26,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label asp-for="PasswordHash" class="form-label fw-medium">Mật khẩu (Mới/Giữ nguyên)</label>
-                    <input asp-for="PasswordHash" type="text" class="form-control" placeholder="Để trống nếu không muốn đổi mật khẩu..." />
+                    <label asp-for="PasswordHash" class="form-label fw-medium">Mật khẩu</label>
+                    <div class="input-group">
+                        <input name="PasswordHash" id="PasswordHash" type="password" class="form-control" value="@Model.PasswordHash" placeholder="Nhập mật khẩu..." autocomplete="new-password" required />
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
                     <span asp-validation-for="PasswordHash" class="text-danger fs-7"></span>
                 </div>
 
@@ -56,4 +61,23 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const passwordInput = document.querySelector("#PasswordHash");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+            
+            const icon = this.querySelector("i");
+            if (type === "password") {
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye");
+            } else {
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash");
+            }
+        });
+    </script>
 }
