@@ -4,6 +4,7 @@ import productService from '../services/productService';
 import categoryProductService from '../services/categoryProductService';
 import Spinner from '../components/Spinner';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { IMAGE_BASE_URL } from '../config';
 import './ShopPage.css';
 
@@ -43,6 +44,7 @@ export default function ShopPage() {
   const [maxPrice, setMaxPrice] = useState('');
   const productsPerPage = 6;
   const { addToCart } = useCart();
+  const { addToast } = useToast();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const catParam = searchParams.get('category');
@@ -206,11 +208,14 @@ export default function ShopPage() {
                           </div>
                           <div className="product-card-actions">
                             <Link to={`/san-pham/${p.id}`} className="btn-details">Chi tiết</Link>
-                            <button 
-                              onClick={() => addToCart(p, 1)} 
-                              disabled={p.stockQuantity <= 0}
-                              className="btn-add-to-cart"
-                            >
+                             <button 
+                               onClick={() => {
+                                 addToCart(p, 1);
+                                 addToast(`Đã thêm ${p.name} vào giỏ hàng!`, 'success');
+                               }} 
+                               disabled={p.stockQuantity <= 0}
+                               className="btn-add-to-cart"
+                             >
                               {p.stockQuantity <= 0 ? 'Hết hàng' : 'Thêm vào giỏ'}
                             </button>
                           </div>

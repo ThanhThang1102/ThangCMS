@@ -88,25 +88,38 @@ namespace CMS.Backend.Controllers.Api
 
         // GET: api/orders/customer/3
         [HttpGet("customer/{customerId}")]
-        public async Task<IActionResult> GetByCustomer(int customerId)
+        public async Task<IActionResult> GetByCustomer(int customerId, [FromQuery] int page = 1, [FromQuery] int pageSize = 5)
         {
-            var orders = await _context.Orders
-                .Where(o => o.CustomerId == customerId)
+            var query = _context.Orders
+                .Where(o => o.CustomerId == customerId);
+
+            int totalItems = await query.CountAsync();
+            int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            var orders = await query
                 .Include(o => o.OrderDetails)
                 .OrderByDescending(o => o.OrderDate)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .Select(o => new
                 {
                     o.Id,
                     o.OrderDate,
                     o.Status,
-                    StatusText = o.Status == 0 ? "Chờ duyệt" : o.Status == 1 ? "Đang giao" : "Đã hoàn thành",
+                    StatusText = o.Status == -1 ? "Chờ TT VNPay" : o.Status == 0 ? "Chờ duyệt" : o.Status == 1 ? "Đang giao" : "Đã hoàn thành",
                     TotalAmount = o.OrderDetails != null
                         ? o.OrderDetails.Sum(d => d.Quantity * d.UnitPrice)
                         : 0
                 })
                 .ToListAsync();
 
-            return Ok(orders);
+            return Ok(new
+            {
+                items = orders,
+                totalItems,
+                totalPages,
+                pageNumber = page
+            });
         }
 
         // POST: api/orders

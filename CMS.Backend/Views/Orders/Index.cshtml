@@ -37,6 +37,7 @@
                     {
                         string statusText = item.Status switch
                         {
+                            -1 => "Chờ TT VNPay",
                             0 => "Chờ duyệt",
                             1 => "Đang giao",
                             2 => "Đã xong",
@@ -44,6 +45,7 @@
                         };
                         string statusClass = item.Status switch
                         {
+                            -1 => "badge-status-pending",
                             0 => "badge-status-pending",
                             1 => "badge-status-shipping",
                             2 => "badge-status-completed",
@@ -74,4 +76,29 @@
             </tbody>
         </table>
     </div>
+    @if (ViewBag.TotalPages > 1)
+    {
+        <div class="card-footer bg-white border-top py-3">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center mb-0">
+                    <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(ViewBag.CurrentPage - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="?page=@i">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(ViewBag.CurrentPage + 1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    }
 </div>

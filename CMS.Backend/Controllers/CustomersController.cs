@@ -55,6 +55,20 @@ namespace CMS.Backend.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FullName,Email,Phone,Address,Password")] Customer customer)
         {
+            if (await _context.Customers.AnyAsync(c => c.Email == customer.Email))
+            {
+                ModelState.AddModelError("Email", "Địa chỉ Email này đã được sử dụng.");
+            }
+            if (await _context.Customers.AnyAsync(c => c.Phone == customer.Phone))
+            {
+                ModelState.AddModelError("Phone", "Số điện thoại này đã được sử dụng.");
+            }
+
+            if (string.IsNullOrEmpty(customer.Password) || customer.Password.Length < 6)
+            {
+                ModelState.AddModelError("Password", "Mật khẩu phải có tối thiểu 6 ký tự.");
+            }
+
             if (ModelState.IsValid)
             {
                 customer.Password = Services.EncryptionHelper.Encrypt(customer.Password);
@@ -90,6 +104,20 @@ namespace CMS.Backend.Controllers
             if (id != customer.Id)
             {
                 return NotFound();
+            }
+
+            if (await _context.Customers.AnyAsync(c => c.Email == customer.Email && c.Id != customer.Id))
+            {
+                ModelState.AddModelError("Email", "Địa chỉ Email này đã được sử dụng bởi khách hàng khác.");
+            }
+            if (await _context.Customers.AnyAsync(c => c.Phone == customer.Phone && c.Id != customer.Id))
+            {
+                ModelState.AddModelError("Phone", "Số điện thoại này đã được sử dụng bởi khách hàng khác.");
+            }
+
+            if (string.IsNullOrEmpty(customer.Password) || customer.Password.Length < 6)
+            {
+                ModelState.AddModelError("Password", "Mật khẩu phải có tối thiểu 6 ký tự.");
             }
 
             if (ModelState.IsValid)

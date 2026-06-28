@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import productService from '../services/productService';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { IMAGE_BASE_URL } from '../config';
 import './ProductShowcase.css';
 
 export default function NewProducts() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
+  const { addToast } = useToast();
 
   useEffect(() => {
     productService.getNewest().then(data => {
@@ -39,7 +41,10 @@ export default function NewProducts() {
               <div className="product-card-actions">
                 <Link to={`/san-pham/${product.id}`} className="btn-details">Chi tiết</Link>
                 <button 
-                  onClick={() => addToCart(product, 1)} 
+                  onClick={() => {
+                    addToCart(product, 1);
+                    addToast(`Đã thêm ${product.name} vào giỏ hàng!`, 'success');
+                  }} 
                   disabled={product.stockQuantity <= 0}
                   className="btn-add-to-cart"
                 >

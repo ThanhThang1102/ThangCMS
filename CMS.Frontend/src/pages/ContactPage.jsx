@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useToast } from '../context/ToastContext';
 import './ContactPage.css';
 
 const MapPinIcon = () => (
@@ -55,6 +56,7 @@ const CheckCircleIcon = () => (
 );
 
 export default function ContactPage() {
+  const { addToast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,6 +78,7 @@ export default function ContactPage() {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
+      addToast('Gửi lời nhắn liên hệ thành công! Chúng tôi sẽ phản hồi sớm nhất.', 'success');
       setFormData({ name: '', email: '', subject: '', message: '' });
     }, 1200);
   };

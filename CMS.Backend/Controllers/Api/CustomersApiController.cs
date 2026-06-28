@@ -78,6 +78,10 @@ namespace CMS.Backend.Controllers.Api
             if (await _context.Customers.AnyAsync(c => c.Email == model.Email))
                 return BadRequest(new { message = "Email này đã được đăng ký" });
 
+            // Kiểm tra số điện thoại trùng
+            if (await _context.Customers.AnyAsync(c => c.Phone == model.Phone))
+                return BadRequest(new { message = "Số điện thoại này đã được đăng ký" });
+
             // Mã hóa mật khẩu lưu vào DB dưới dạng AES
             model.Password = Services.EncryptionHelper.Encrypt(model.Password);
 
@@ -162,6 +166,10 @@ namespace CMS.Backend.Controllers.Api
             // Kiểm tra email trùng với tài khoản khác
             if (await _context.Customers.AnyAsync(c => c.Email == model.Email && c.Id != id))
                 return BadRequest(new { message = "Email này đã được sử dụng bởi khách hàng khác" });
+
+            // Kiểm tra số điện thoại trùng với tài khoản khác
+            if (await _context.Customers.AnyAsync(c => c.Phone == model.Phone && c.Id != id))
+                return BadRequest(new { message = "Số điện thoại này đã được sử dụng bởi khách hàng khác" });
 
             existing.FullName = model.FullName;
             existing.Email = model.Email;

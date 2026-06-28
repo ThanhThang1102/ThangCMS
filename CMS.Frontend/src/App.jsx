@@ -13,14 +13,18 @@ import CheckoutPage from './pages/CheckoutPage';
 import ContactPage from './pages/ContactPage';
 import ProfilePage from './pages/ProfilePage';
 import OrdersPage from './pages/OrdersPage';
+import PaymentSuccessPage from './pages/PaymentSuccessPage';
+import PaymentFailPage from './pages/PaymentFailPage';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { ToastProvider } from './context/ToastContext';
 import './index.css';
 
 export default function App() {
   return (
-    <AuthProvider>
-      <CartProvider>
+    <ToastProvider>
+      <AuthProvider>
+        <CartProvider>
         <BrowserRouter>
           <div className="app">
             <Navbar />
@@ -39,6 +43,8 @@ export default function App() {
                 <Route path="/lien-he" element={<ContactPage />} />
                 <Route path="/ho-so" element={<ProfilePage />} />
                 <Route path="/don-hang" element={<OrdersPage />} />
+                <Route path="/thanh-toan-thanh-cong" element={<PaymentSuccessPage />} />
+                <Route path="/thanh-toan-that-bai" element={<PaymentFailPage />} />
               </Routes>
             </main>
             <footer className="footer">
@@ -48,5 +54,6 @@ export default function App() {
         </BrowserRouter>
       </CartProvider>
     </AuthProvider>
-  );
+  </ToastProvider>
+);
 }

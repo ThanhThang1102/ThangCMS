@@ -2,13 +2,16 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import customerService from '../services/customerService';
 import orderService from '../services/orderService';
+import axiosClient from '../api/axiosClient';
 import './CheckoutPage.css';
 
 export default function CheckoutPage() {
   const { cart, cartTotal, clearCart } = useCart();
   const { user } = useAuth();
+  const { addToast } = useToast();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -20,7 +23,7 @@ export default function CheckoutPage() {
   });
   
   const [loading, setLoading] = useState(false);
-  const [toast, setToast] = useState({ show: false, type: '', message: '' });
+  const [paymentMethod, setPaymentMethod] = useState('cod'); // 'cod' | 'vnpay'
 
   // Prefill if logged in
   useEffect(() => {
@@ -47,32 +50,51 @@ export default function CheckoutPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const triggerToast = (type, message) => {
-    setToast({ show: true, type, message });
-    setTimeout(() => {
-      setToast(prev => ({ ...prev, show: false }));
-    }, 4500);
-  };
-
   const handleCheckout = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      let customerId = user?.id;
+      if (paymentMethod === 'vnpay') {
+        // ---- VNPay flow ----
+        const payload = {
+          customerId: user?.id ?? 0,
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address,
+          notes: formData.notes,
+          orderDetails: cart.map(item => ({
+            productId: item.productId,
+            quantity: item.quantity,
+            unitPrice: item.price
+          }))
+        };
 
-      // If not logged in, we must create a guest customer
+        // axiosClient interceptor đã unwrap response.data → res chính là payload
+        const res = await axiosClient.post('/payment/create-vnpay-url', payload);
+        const paymentUrl = res?.paymentUrl || res?.data?.paymentUrl;
+        if (!paymentUrl) throw new Error('Không nhận được URL thanh toán từ server.');
+
+        // KHÔNG xóa giỏ hàng ở đây!
+        // Cart sẽ chỉ được xóa SAU KHI VNPay xác nhận thanh toán thành công
+        // (tại trang /thanh-toan-thanh-cong)
+        window.location.href = paymentUrl;
+        return;
+      }
+
+      // ---- COD flow (giữ nguyên) ----
+      let customerId = user?.id;
       if (!customerId) {
         const custData = await customerService.register({
           ...formData,
-          password: 'GuestUser123!' // Dummy password for guests
+          password: 'GuestUser123!'
         });
         customerId = custData.id;
       }
 
-      // Prepare order payload
       const orderPayload = {
-        customerId: customerId,
+        customerId,
         notes: formData.notes,
         orderDetails: cart.map(item => ({
           productId: item.productId,
@@ -83,13 +105,12 @@ export default function CheckoutPage() {
 
       await orderService.create(orderPayload);
       clearCart();
-      triggerToast('success', 'Đặt hàng thành công! Đang chuyển hướng về trang đơn hàng...');
-      setTimeout(() => {
-        navigate('/don-hang');
-      }, 2000);
+      addToast('Đặt hàng thành công! Đang chuyển hướng về trang đơn hàng...', 'success');
+      setTimeout(() => { navigate('/don-hang'); }, 2000);
+
     } catch (err) {
       const errMsg = err.response?.data?.message || 'Có lỗi xảy ra khi đặt hàng. Vui lòng thử lại.';
-      triggerToast('error', errMsg);
+      addToast(errMsg, 'error');
     } finally {
       setLoading(false);
     }
@@ -97,27 +118,6 @@ export default function CheckoutPage() {
 
   return (
     <div className="checkout-page">
-      {toast.show && (
-        <div className={`checkout-toast toast-${toast.type}`}>
-          <div className="checkout-toast-content">
-            {toast.type === 'success' ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="toast-icon">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                <polyline points="22 4 12 14.01 9 11.01" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="toast-icon">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" x2="12" y1="8" y2="12" />
-                <line x1="12" x2="12.01" y1="16" y2="16" />
-              </svg>
-            )}
-            <span>{toast.message}</span>
-          </div>
-          <button className="checkout-toast-close" onClick={() => setToast({ ...toast, show: false })}>✕</button>
-        </div>
-      )}
-
       <h1>Thanh toán</h1>
 
       <div className="checkout-layout">
@@ -155,9 +155,42 @@ export default function CheckoutPage() {
               <label>Ghi chú đơn hàng (Tùy chọn)</label>
               <textarea name="notes" rows="3" value={formData.notes} onChange={handleChange} placeholder="Ghi chú về thời gian giao hàng..."></textarea>
             </div>
-            
+
+            {/* ---- Phương thức thanh toán ---- */}
+            <div className="form-group">
+              <label>Phương thức thanh toán</label>
+              <div className="payment-methods">
+                <label className={`payment-method-option ${paymentMethod === 'cod' ? 'active' : ''}`}>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="cod"
+                    checked={paymentMethod === 'cod'}
+                    onChange={() => setPaymentMethod('cod')}
+                  />
+                  <span className="pm-icon">💵</span>
+                  <span className="pm-label">Thanh toán khi nhận hàng (COD)</span>
+                </label>
+                <label className={`payment-method-option ${paymentMethod === 'vnpay' ? 'active' : ''}`}>
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="vnpay"
+                    checked={paymentMethod === 'vnpay'}
+                    onChange={() => setPaymentMethod('vnpay')}
+                  />
+                  <span className="pm-icon">🏦</span>
+                  <span className="pm-label">Thanh toán qua VNPay (ATM / QR Code)</span>
+                </label>
+              </div>
+            </div>
+
             <button type="submit" className="btn-submit-order" disabled={loading}>
-              {loading ? 'Đang xử lý...' : 'Xác nhận đặt hàng'}
+              {loading
+                ? 'Đang xử lý...'
+                : paymentMethod === 'vnpay'
+                  ? '🏦 Thanh toán với VNPay'
+                  : '✅ Xác nhận đặt hàng (COD)'}
             </button>
           </form>
         </div>

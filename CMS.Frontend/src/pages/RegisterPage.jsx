@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import customerService from '../services/customerService';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import './AuthPage.css';
 
 export default function RegisterPage() {
@@ -12,11 +13,11 @@ export default function RegisterPage() {
     address: '',
     password: ''
   });
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   
   const { login } = useAuth();
+  const { addToast } = useToast();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -25,16 +26,16 @@ export default function RegisterPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
     setLoading(true);
     
     try {
       const data = await customerService.register(formData);
       // Auto login after register
       login(data);
+      addToast('Đăng ký tài khoản thành công!', 'success');
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.message || 'Đăng ký thất bại. Vui lòng kiểm tra lại thông tin.');
+      addToast(err.response?.data?.message || 'Đăng ký thất bại. Vui lòng kiểm tra lại thông tin.', 'error');
     } finally {
       setLoading(false);
     }
@@ -45,8 +46,6 @@ export default function RegisterPage() {
       <div className="auth-card register-card">
         <h2>Tạo tài khoản mới</h2>
         <p className="auth-subtitle">Điền thông tin để bắt đầu mua sắm</p>
-        
-        {error && <div className="auth-error">{error}</div>}
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">

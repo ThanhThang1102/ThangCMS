@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import customerService from '../services/customerService';
 import './ProfilePage.css';
 
 export default function ProfilePage() {
   const { user, login } = useAuth();
+  const { addToast } = useToast();
   const navigate = useNavigate();
 
   const [fullName, setFullName] = useState('');
@@ -57,13 +59,16 @@ export default function ProfilePage() {
       // Update local context
       login(updatedUser);
       setMessage({ type: 'success', text: 'Cập nhật thông tin cá nhân thành công!' });
+      addToast('Cập nhật thông tin cá nhân thành công!', 'success');
       setIsEditing(false);
     } catch (err) {
       console.error(err);
+      const errMsg = err.response?.data?.message || 'Không thể cập nhật thông tin. Vui lòng thử lại.';
       setMessage({ 
         type: 'error', 
-        text: err.response?.data?.message || 'Không thể cập nhật thông tin. Vui lòng thử lại.' 
+        text: errMsg 
       });
+      addToast(errMsg, 'error');
     } finally {
       setLoading(false);
     }
@@ -74,12 +79,16 @@ export default function ProfilePage() {
     setPwdMessage({ type: '', text: '' });
 
     if (newPassword.length < 6) {
-      setPwdMessage({ type: 'error', text: 'Mật khẩu mới phải có tối thiểu 6 ký tự' });
+      const errMsg = 'Mật khẩu mới phải có tối thiểu 6 ký tự';
+      setPwdMessage({ type: 'error', text: errMsg });
+      addToast(errMsg, 'error');
       return;
     }
 
     if (newPassword !== confirmNewPassword) {
-      setPwdMessage({ type: 'error', text: 'Mật khẩu mới và xác nhận mật khẩu không khớp' });
+      const errMsg = 'Mật khẩu mới và xác nhận mật khẩu không khớp';
+      setPwdMessage({ type: 'error', text: errMsg });
+      addToast(errMsg, 'error');
       return;
     }
 
@@ -90,15 +99,18 @@ export default function ProfilePage() {
         newPassword
       });
       setPwdMessage({ type: 'success', text: 'Thay đổi mật khẩu thành công!' });
+      addToast('Thay đổi mật khẩu thành công!', 'success');
       setCurrentPassword('');
       setNewPassword('');
       setConfirmNewPassword('');
     } catch (err) {
       console.error(err);
+      const errMsg = err.response?.data?.message || 'Không thể đổi mật khẩu. Vui lòng thử lại.';
       setPwdMessage({
         type: 'error',
-        text: err.response?.data?.message || 'Không thể đổi mật khẩu. Vui lòng thử lại.'
+        text: errMsg
       });
+      addToast(errMsg, 'error');
     } finally {
       setPwdLoading(false);
     }

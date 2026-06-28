@@ -1,26 +1,27 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import customerService from '../services/customerService';
+import { useToast } from '../context/ToastContext';
 import './AuthPage.css';
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { addToast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
     setSuccess(false);
     setLoading(true);
 
     try {
       await customerService.forgotPassword({ email });
       setSuccess(true);
+      addToast('Mật khẩu mới đã được gửi thành công đến email của bạn!', 'success');
       setEmail('');
     } catch (err) {
-      setError(err.response?.data?.message || 'Không thể gửi yêu cầu. Vui lòng thử lại.');
+      addToast(err.response?.data?.message || 'Không thể gửi yêu cầu. Vui lòng thử lại.', 'error');
     } finally {
       setLoading(false);
     }
@@ -45,8 +46,6 @@ export default function ForgotPasswordPage() {
         ) : (
           <>
             <p className="auth-subtitle">Nhập email tài khoản của bạn để nhận mật khẩu tạm thời mới</p>
-            
-            {error && <div className="auth-error">{error}</div>}
             
             <form onSubmit={handleSubmit} className="auth-form">
               <div className="form-group">

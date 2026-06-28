@@ -20,10 +20,26 @@ namespace CMS.Backend.Controllers
         }
 
         // GET: Orders
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var orders = _context.Orders.Include(o => o.Customer);
-            return View(await orders.ToListAsync());
+            const int pageSize = 5;
+            var totalOrders = await _context.Orders.CountAsync();
+            var totalPages = (int)Math.Ceiling((double)totalOrders / pageSize);
+
+            // Limit page number to valid bounds
+            page = Math.Max(1, Math.Min(page, Math.Max(1, totalPages)));
+
+            var orders = await _context.Orders
+                .Include(o => o.Customer)
+                .OrderByDescending(o => o.OrderDate)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+
+            return View(orders);
         }
 
         // GET: Orders/Details/5

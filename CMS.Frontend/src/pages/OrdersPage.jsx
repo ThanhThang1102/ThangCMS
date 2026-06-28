@@ -13,6 +13,8 @@ export default function OrdersPage() {
   const [loading, setLoading] = useState(true);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [detailLoading, setDetailLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     if (!user) {
@@ -21,9 +23,15 @@ export default function OrdersPage() {
     }
 
     setLoading(true);
-    orderService.getByCustomer(user.id)
+    orderService.getByCustomer(user.id, page)
       .then(data => {
-        setOrders(data);
+        if (data && data.items) {
+          setOrders(data.items);
+          setTotalPages(data.totalPages);
+        } else {
+          setOrders(data || []);
+          setTotalPages(1);
+        }
       })
       .catch(err => {
         console.error("Lỗi khi tải danh sách đơn hàng:", err);
@@ -31,7 +39,7 @@ export default function OrdersPage() {
       .finally(() => {
         setLoading(false);
       });
-  }, [user, navigate]);
+  }, [user, navigate, page]);
 
   if (!user) return null;
 
@@ -124,6 +132,26 @@ export default function OrdersPage() {
                 </tbody>
               </table>
             </div>
+
+            {totalPages > 1 && (
+              <div className="pagination">
+                <button
+                  className="btn-page"
+                  disabled={page === 1}
+                  onClick={() => setPage(page - 1)}
+                >
+                  &laquo; Trước
+                </button>
+                <span className="page-info">Trang {page} / {totalPages}</span>
+                <button
+                  className="btn-page"
+                  disabled={page === totalPages}
+                  onClick={() => setPage(page + 1)}
+                >
+                  Sau &raquo;
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

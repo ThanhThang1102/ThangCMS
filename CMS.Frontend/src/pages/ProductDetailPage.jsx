@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import productService from '../services/productService';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import Spinner from '../components/Spinner';
 import { IMAGE_BASE_URL } from '../config';
 import './ProductDetailPage.css';
@@ -9,6 +10,7 @@ import './ProductDetailPage.css';
 export default function ProductDetailPage() {
   const { id } = useParams();
   const { addToCart } = useCart();
+  const { addToast } = useToast();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -79,7 +81,7 @@ export default function ProductDetailPage() {
               disabled={product.stockQuantity === 0}
               onClick={() => {
                 addToCart(product, quantity);
-                alert(`Đã thêm ${quantity} sản phẩm vào giỏ hàng!`);
+                addToast(`Đã thêm ${quantity} sản phẩm vào giỏ hàng!`, 'success');
               }}
             >
               🛒 Thêm vào giỏ hàng

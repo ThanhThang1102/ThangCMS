@@ -54,6 +54,16 @@ namespace CMS.Backend.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Username,PasswordHash,FullName,Role")] User user)
         {
+            if (await _context.Users.AnyAsync(u => u.Username == user.Username))
+            {
+                ModelState.AddModelError("Username", "Tên đăng nhập này đã được sử dụng.");
+            }
+
+            if (string.IsNullOrEmpty(user.PasswordHash) || user.PasswordHash.Length < 6)
+            {
+                ModelState.AddModelError("PasswordHash", "Mật khẩu phải có tối thiểu 6 ký tự.");
+            }
+
             if (ModelState.IsValid)
             {
                 // Mã hóa mật khẩu lưu vào DB dưới dạng AES
@@ -96,6 +106,15 @@ namespace CMS.Backend.Controllers
             if (string.IsNullOrEmpty(user.PasswordHash))
             {
                 ModelState.Remove("PasswordHash");
+            }
+            else if (user.PasswordHash.Length < 6)
+            {
+                ModelState.AddModelError("PasswordHash", "Mật khẩu mới phải có tối thiểu 6 ký tự.");
+            }
+
+            if (await _context.Users.AnyAsync(u => u.Username == user.Username && u.Id != user.Id))
+            {
+                ModelState.AddModelError("Username", "Tên đăng nhập này đã được sử dụng bởi người dùng khác.");
             }
 
             if (ModelState.IsValid)

@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import { IMAGE_BASE_URL } from '../config';
 import './CartPage.css';
 
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart, clearCart, cartTotal } = useCart();
+  const { addToast } = useToast();
 
   const formatPrice = (price) =>
     new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
@@ -24,7 +26,15 @@ export default function CartPage() {
     <div className="cart-page">
       <div className="cart-header">
         <h1>🛒 Giỏ hàng</h1>
-        <button onClick={clearCart} className="btn-clear">Xóa toàn bộ</button>
+        <button 
+          onClick={() => {
+            clearCart();
+            addToast('Đã xóa toàn bộ sản phẩm khỏi giỏ hàng!', 'info');
+          }} 
+          className="btn-clear"
+        >
+          Xóa toàn bộ
+        </button>
       </div>
 
       <div className="cart-layout">
@@ -52,7 +62,15 @@ export default function CartPage() {
                 {formatPrice(item.price * item.quantity)}
               </div>
               
-              <button className="btn-remove" onClick={() => removeFromCart(item.productId)}>×</button>
+              <button 
+                className="btn-remove" 
+                onClick={() => {
+                  removeFromCart(item.productId);
+                  addToast(`Đã xóa ${item.name} khỏi giỏ hàng!`, 'info');
+                }}
+              >
+                ×
+              </button>
             </div>
           ))}
         </div>
